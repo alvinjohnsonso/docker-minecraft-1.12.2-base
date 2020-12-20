@@ -1,6 +1,5 @@
 FROM openjdk:8
 
-ENV INSTALL_JAR="forge-1.12.2-14.23.5.2854-installer.jar"
 ENV SERVER_JAR="forge-1.12.2-14.23.5.2854.jar"
 ENV MIN_RAM="1024M"
 ENV MAX_RAM="4096M"
@@ -9,6 +8,7 @@ ENV JAVA_PARAMETERS="-XX:+UseG1GC -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX
 WORKDIR /usr/src/app/
 
 COPY ./lib .
+RUN wget -O ./installer.jar https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar
 RUN chmod +x install.sh
 
 # file permissions
