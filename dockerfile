@@ -1,4 +1,4 @@
-FROM openjdk:9
+FROM openjdk:8
 
 ENV SERVER_JAR="forge-1.12.2-14.23.5.2854.jar"
 ENV MIN_RAM="1024M"
